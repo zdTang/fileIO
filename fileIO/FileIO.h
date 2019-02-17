@@ -5,7 +5,7 @@
 * First version:2019-02-16
 * Description:
 */
-
+#define _CRT_SECURE_NO_WARNINGS
 #ifndef _FileIO_h_
 #define _FileIO_h_
 #define MAX_PATH  100   // The length for the path of local directory
@@ -20,13 +20,13 @@ class FileIO {
 
 
 private:
-	char*     buffer;                // Content of the original file
-	char*     fileName;              // Name of the original file
-	char      path[MAX_PATH];        // The path used for both Server/Client
-	//char      filePath[MAX_PATH];    // [For Client only] The
-	FILE*     pFile;                 // File pointer to the target file
-	long      lSize;                 // Hold the size of the file
-	size_t    result;                //
+	
+	char*    buffer;                // Content of the original file
+	char     fileName[MAX_PATH];              // Name of the original file
+	char     path[MAX_PATH];        // The path used for both Server/Client
+	FILE*    pFile;                 // File pointer to the target file
+	long     lSize;                 // Hold the size of the file
+	size_t   result;                //
 
 	
 	

@@ -38,11 +38,19 @@ FileIO::~FileIO()
 /*
 * Function:		Read
 * Description:	This method will read from a specified file to a buffer.
+                It will parse the path and save the file name to the variable: fileName
 * Parameters:	char* path : The path of specified file
 * Return Value:	N/A
 */
 void FileIO::Read(char* path)
 {
+	/*Save the file name first*/
+	
+	char *p;  // tempory var used for counting
+	strcpy(fileName, (p = strrchr(path, '\\')) ? p + 1 : path);
+
+	printf("%s\n", fileName);
+
 
 	/* Read file */
 	pFile = fopen(path, "rb");
@@ -74,6 +82,7 @@ void FileIO::Read(char* path)
 	}
 	/*for testing */
 	printf("%s", buffer);
+	
 
 	/* once done reading, close the file */
 	fclose(pFile);	
@@ -91,18 +100,10 @@ void FileIO::Write()
 {
 
 	/* Get local path */
-
-	char fn[30], *p;
-	//char pathname[80] = "e:\\1\\2\\abc.dat";
-
-	strcpy(fn, (p = strrchr(path, '\\')) ? p + 1 : path);
 	
-	printf("%s\n", fn);//打出来看看
+	_getcwd(path, MAX_PATH);
 	
-	
-	getcwd(path, MAX_PATH);
-	
-
+	printf("%s\n", path);//打出来看看
 	
 	fclose(pFile);
 }
