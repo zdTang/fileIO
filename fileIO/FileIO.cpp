@@ -32,7 +32,18 @@ FileIO::~FileIO()
 	free(buffer);  // free the buffer
 }
 
+char* FileIO::GetFileName(void)
+{
+	return fileName;
 
+}
+
+
+char* FileIO::GetBuffer(void)
+{
+	return buffer;
+
+}
 
 
 /*

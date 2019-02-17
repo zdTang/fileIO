@@ -8,6 +8,9 @@ int main(int argc, char** argv)
 {
 	FileIO file;
 	file.Read(argv[1]);
+
+	char* x = file.GetBuffer();
+	char* y = file.GetFileName();
 	file.Write();
 
 	

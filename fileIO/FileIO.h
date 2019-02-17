@@ -39,6 +39,9 @@ private:
 public:
 	FileIO();	                     // Singleton, private constructor
 	~FileIO();
+	char* GetFileName(void);
+	char* GetBuffer(void);
+	
 	void Read(char* path); // Reading file from specified path to the buffer
 	void Write();          // Writing file to a specified file from buffer
 
